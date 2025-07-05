@@ -10,6 +10,11 @@ import HelloWorld from './components/HelloWorld.vue'
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
 
+      <div class="container py-4 px-3 mx-auto">
+        <h1>Hello, Bootstrap and Vite!</h1>
+        <button class="btn btn-primary">Primary button</button>
+      </div>
+
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
