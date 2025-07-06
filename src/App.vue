@@ -1,7 +1,12 @@
 <script setup>
 import { onMounted } from 'vue'
-import { RouterLink, RouterView } from 'vue-router'
-import DataService from '/src/services/nasa.js'
+import { RouterView } from 'vue-router'
+
+// components
+import Header from './components/Header.vue'
+
+// services
+import DataService from './services/nasa.js'
 
 onMounted(function () {
   DataService.getDayPic().then(function (data) {
@@ -11,16 +16,12 @@ onMounted(function () {
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
-
-  <RouterView />
+  <v-app>
+    <Header />
+    <v-main>
+      <v-container>
+        <RouterView />
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
