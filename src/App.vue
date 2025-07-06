@@ -1,5 +1,13 @@
 <script setup>
+import { onMounted } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
+import DataService from '/src/services/nasa.js'
+
+onMounted(function () {
+  DataService.getDayPic().then(function (data) {
+    console.log('data', data)
+  })
+})
 </script>
 
 <template>
