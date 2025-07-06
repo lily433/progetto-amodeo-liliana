@@ -41,7 +41,7 @@ watch(group, () => {
       <v-app-bar-title>
         <!-- navigazione alla pagina '/' al click sull'immagine -->
         <RouterLink to="/">
-          <img :src="logo" width="70px" />
+          <img :src="logo" width="65px" />
         </RouterLink>
       </v-app-bar-title>
 
