@@ -6,20 +6,20 @@ import { ref, watch } from 'vue'
 
 const items = [
   {
-    title: 'Foo',
-    value: 'foo',
+    title: 'Asteroid NeoWs',
+    link: 'asteroid_news',
   },
   {
-    title: 'Bar',
-    value: 'bar',
+    title: 'Earth Observatory Natural Events',
+    link: 'eonet',
   },
   {
-    title: 'Fizz',
-    value: 'fizz',
+    title: 'Exoplanet',
+    link: 'exoplanet',
   },
   {
-    title: 'Buzz',
-    value: 'buzz',
+    title: 'Mars Rover Photos',
+    link: 'mars_rover_photos',
   },
 ]
 
@@ -41,7 +41,7 @@ watch(group, () => {
       <v-app-bar-title>
         <!-- navigazione alla pagina '/' al click sull'immagine -->
         <RouterLink to="/">
-          <img :src="logo" width="70px" />
+          <img :src="logo" width="65px" />
         </RouterLink>
       </v-app-bar-title>
 
@@ -59,7 +59,13 @@ watch(group, () => {
       </div>
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" temporary>
-      <v-list :items="items"></v-list>
+      <v-list>
+        <v-list-item v-for="(item, i) in items" :key="i" :value="item" :to="item.link" link>
+          <v-list-item-title>
+            {{ item.title }}
+          </v-list-item-title>
+        </v-list-item>
+      </v-list>
     </v-navigation-drawer>
   </header>
 </template>
