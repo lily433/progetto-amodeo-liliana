@@ -8,7 +8,9 @@ import DataService from '../services/nasa.js'
 const apod = ref(null)
 
 onMounted(() => {
-  DataService.getDayPic().then((data) => {
+  const todayDateTime = new Date().toISOString()
+  const todayDate = todayDateTime.split('T')[0]
+  DataService.getDayPic(todayDate).then((data) => {
     apod.value = data.data
   })
 })

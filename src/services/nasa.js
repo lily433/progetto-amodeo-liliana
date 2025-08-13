@@ -17,8 +17,8 @@ axios.interceptors.request.use((config) => {
 })
 
 export default {
-  getDayPic: async function () {
-    const endpointURL = '/planetary/apod?date=2025-07-05'
+  getDayPic: async function (today) {
+    const endpointURL = `/planetary/apod?date=${today}`
     return axios({
       url: BASE_NASA_URL + endpointURL,
       method: 'get',
