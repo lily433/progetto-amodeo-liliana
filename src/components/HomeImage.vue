@@ -10,13 +10,13 @@ const props = defineProps(['title', 'copyright', 'date', 'explanation', 'picture
     alt="NASA Picture of the Day"
   >
     <div class="info w-70 h-100 d-flex flex-column justify-content-center gap-2 p-4 text-white">
-      <h1 class="dt">Pic of the Day</h1>
+      <h1 class="fw-bold">PIC OF THE DAY</h1>
       <div>
         <span class="badge bg-primary w-auto">{{ props.date }}</span>
       </div>
-      <h4>{{ props.title }}</h4>
+      <h4 class="fw-bold">{{ props.title }}</h4>
       <small class="w-50">{{ props.explanation }}</small>
-      <small>Copyrights {{ props.copyright }}</small>
+      <small v-if="props.copyright" class="fst-italic">Copyrights {{ props.copyright }}</small>
     </div>
   </div>
 </template>
