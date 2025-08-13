@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps(['title', 'copyright', 'date', 'explanation', 'pictureUrl'])
+const props = defineProps(['context', 'title', 'copyright', 'date', 'explanation', 'pictureUrl'])
 </script>
 
 <template>
@@ -10,7 +10,7 @@ const props = defineProps(['title', 'copyright', 'date', 'explanation', 'picture
     alt="NASA Picture of the Day"
   >
     <div class="info w-70 h-100 d-flex flex-column justify-content-center gap-2 p-4 text-white">
-      <h1 class="fw-bold">PIC OF THE DAY</h1>
+      <h1 class="fw-bold">{{ props.context }}</h1>
       <div>
         <span class="badge bg-primary w-auto">{{ props.date }}</span>
       </div>

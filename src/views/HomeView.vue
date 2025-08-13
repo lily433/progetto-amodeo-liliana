@@ -1,9 +1,9 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 // components
-import HomeImage from '../components/HomeImage.vue'
+import FullPageImageWithDescription from '@/components/FullPageImageWithDescription.vue'
 // services
-import DataService from '../services/nasa.js'
+import DataService from '@/services/nasa.js'
 
 const apod = ref(null)
 
@@ -17,8 +17,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <HomeImage
+  <FullPageImageWithDescription
     v-if="apod"
+    :context="'PIC OF THE DAY'"
     :title="apod.title"
     :date="apod.date"
     :explanation="apod.explanation"

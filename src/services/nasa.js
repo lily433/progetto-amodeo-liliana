@@ -24,4 +24,11 @@ export default {
       method: 'get',
     })
   },
+  getAsteroidsNeows: async function (fromDate, toDate) {
+    const endpointURL = `/neo/rest/v1/feed?start_date=${fromDate}&end_date=${toDate}`
+    return axios({
+      url: BASE_NASA_URL + endpointURL,
+      method: 'get',
+    })
+  },
 }
