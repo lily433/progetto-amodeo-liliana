@@ -1,9 +1,9 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 // components
-import HomeImage from '../components/HomeImage.vue'
+import FullPageImageWithDescription from '@/components/FullPageImageWithDescription.vue'
 // services
-import DataService from '../services/nasa.js'
+import DataService from '@/services/nasa.js'
 
 const apod = ref(null)
 
@@ -17,12 +17,21 @@ onMounted(() => {
 </script>
 
 <template>
-  <HomeImage
-    v-if="apod"
-    :title="apod.title"
-    :date="apod.date"
-    :explanation="apod.explanation"
-    :pictureUrl="apod.url"
-    :copyright="apod.copyright"
-  />
+  <div
+    v-if="asteroid_neows == null"
+    class="d-flex justify-content-center align-items-center w-100 h-100"
+  >
+    <v-progress-circular indeterminate></v-progress-circular>
+  </div>
+  <div v-else class="container d-flex justify-content-center align-items-center w-100 h-100 p-4">
+    <FullPageImageWithDescription
+      v-if="apod"
+      :context="'PIC OF THE DAY'"
+      :title="apod.title"
+      :date="apod.date"
+      :explanation="apod.explanation"
+      :pictureUrl="apod.url"
+      :copyright="apod.copyright"
+    />
+  </div>
 </template>

@@ -7,7 +7,7 @@ import { ref, watch } from 'vue'
 const items = [
   {
     title: 'Asteroid NeoWs',
-    link: 'asteroid_news',
+    link: 'asteroid_neows',
   },
   {
     title: 'Earth Observatory Natural Events',
