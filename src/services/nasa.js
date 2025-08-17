@@ -31,4 +31,11 @@ export default {
       method: 'get',
     })
   },
+  getMarsRoverPhotos: async function () {
+    const endpointURL = `/mars-photos/api/v1/rovers/curiosity/photos?sol=1000`
+    return axios({
+      url: BASE_NASA_URL + endpointURL,
+      method: 'get',
+    })
+  },
 }

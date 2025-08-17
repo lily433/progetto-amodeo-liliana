@@ -3,16 +3,16 @@ const props = defineProps(['title', 'pictureUrl'])
 </script>
 
 <template>
-  <div
+  <v-parallax
     v-if="props.pictureUrl"
-    :style="{ backgroundImage: 'url(' + props.pictureUrl + ')' }"
-    class="w-100 h-100 bg-cover"
+    :src="props.pictureUrl"
+    height="600"
     alt="NASA Picture of the Day"
   >
     <div class="info w-100 h-100 d-flex flex-column justify-content-center gap-2 p-4 text-white">
       <h1 class="fw-bold">{{ props.title }}</h1>
     </div>
-  </div>
+  </v-parallax>
 </template>
 
 <style scoped>

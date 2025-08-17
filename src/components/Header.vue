@@ -6,17 +6,17 @@ import { ref, watch } from 'vue'
 
 const items = [
   {
-    title: 'Asteroid NeoWs',
+    title: 'Asteroids near Earth',
     link: 'asteroid_neows',
   },
-  {
-    title: 'Earth Observatory Natural Events',
-    link: 'eonet',
-  },
-  {
-    title: 'Exoplanet',
-    link: 'exoplanet',
-  },
+  // {
+  //   title: 'Earth Observatory Natural Events',
+  //   link: 'eonet',
+  // },
+  // {
+  //   title: 'Exoplanet',
+  //   link: 'exoplanet',
+  // },
   {
     title: 'Mars Rover Photos',
     link: 'mars_rover_photos',
@@ -58,13 +58,32 @@ watch(group, () => {
         ></v-text-field>
       </div>
     </v-app-bar>
-    <v-navigation-drawer v-model="drawer" temporary>
+
+    <!-- Navigation Drawer -->
+    <v-navigation-drawer v-model="drawer" temporary color="black" class="text-white">
       <v-list>
+        <!-- Main items -->
         <v-list-item v-for="(item, i) in items" :key="i" :value="item" :to="item.link" link>
-          <v-list-item-title>
+          <v-list-item-title class="text-white">
             {{ item.title }}
           </v-list-item-title>
         </v-list-item>
+
+        <!-- Subgroup for Contacts & Info -->
+        <v-list-group value="contacts">
+          <template v-slot:activator="{ props }">
+            <v-list-item v-bind="props">
+              <v-list-item-title class="text-white">Support</v-list-item-title>
+            </v-list-item>
+          </template>
+
+          <v-list-item to="/contact">
+            <v-list-item-title class="text-white">Contacts</v-list-item-title>
+          </v-list-item>
+          <v-list-item to="/about">
+            <v-list-item-title class="text-white">About</v-list-item-title>
+          </v-list-item>
+        </v-list-group>
       </v-list>
     </v-navigation-drawer>
   </header>
