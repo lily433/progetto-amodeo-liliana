@@ -46,24 +46,25 @@ function onDateChange() {
 <template>
   <div class="d-flex flex-column justify-content-center align-center gap-4 h-100">
     <div style="width: 100%; height: 400px">
-      <TitleWithImage :title="'Asteroids'" :pictureUrl="'src/assets/asteroid_cover.png'" />
+      <TitleWithImage title="Asteroids near Earth" pictureUrl="src/assets/asteroid_cover.png" />
     </div>
-    <div
-      class="container d-flex flex-column justify-content-center align-items-center w-100 gap-2 m-4"
-    >
-      <div class="d-flex w-100 justify-content-between align-items-center gap-4">
-        <v-date-input
-          v-model="startDate"
-          label="Start date"
-          variant="solo"
-          @update:model-value="onDateChange"
-        />
-        <v-date-input
-          v-model="endDate"
-          label="End date"
-          variant="solo"
-          @update:model-value="onDateChange"
-        />
+    <div class="container d-flex flex-column w-100 gap-2 m-4">
+      <div class="d-flex flex-column gap-4">
+        <div>Select asteroids info by date range</div>
+        <div class="d-flex w-100 justify-content-between align-items-center gap-4">
+          <v-date-input
+            v-model="startDate"
+            label="Start date"
+            variant="solo"
+            @update:model-value="onDateChange"
+          />
+          <v-date-input
+            v-model="endDate"
+            label="End date"
+            variant="solo"
+            @update:model-value="onDateChange"
+          />
+        </div>
       </div>
 
       <div v-if="loading" class="d-flex justify-content-center align-items-center w-100 h-100">
