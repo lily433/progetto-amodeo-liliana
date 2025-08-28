@@ -5,6 +5,7 @@ Chiamate Ajax alle API della Nasa
 
 import axios from 'axios'
 
+// Initialize Axios
 const BASE_NASA_URL = 'https://api.nasa.gov'
 const API_KEY = '9S8k0piF9WjyQ83SfOTcQffdudTqeykVGPsEj5K2'
 
