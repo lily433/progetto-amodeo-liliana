@@ -50,8 +50,8 @@ function onDateChange() {
     </div>
     <div class="container d-flex flex-column w-100 gap-2 m-4">
       <div class="d-flex flex-column gap-4">
-        <div>Select asteroids info by date range</div>
-        <div class="d-flex w-100 justify-content-between align-items-center gap-4">
+        <div class="fs-5 fs-md-3 fw-bold">Select asteroids info by date range</div>
+        <div class="d-flex w-100 flex-column flex-sm-row gap-2">
           <v-date-input
             v-model="startDate"
             label="Start date"

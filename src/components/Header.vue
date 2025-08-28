@@ -44,19 +44,6 @@ watch(group, () => {
           <img :src="logo" width="65px" />
         </RouterLink>
       </v-app-bar-title>
-
-      <div style="width: 200px; margin: 10px 14px">
-        <v-text-field
-          :loading="loading"
-          append-inner-icon="mdi-magnify"
-          density="compact"
-          label="Search"
-          variant="outlined"
-          hide-details
-          single-line
-          @click:append-inner="onClick"
-        ></v-text-field>
-      </div>
     </v-app-bar>
 
     <!-- Navigation Drawer -->
@@ -77,7 +64,7 @@ watch(group, () => {
             </v-list-item>
           </template>
 
-          <v-list-item to="/contact">
+          <v-list-item to="/contacts">
             <v-list-item-title class="text-white">Contacts</v-list-item-title>
           </v-list-item>
           <v-list-item to="/about">

@@ -30,11 +30,14 @@ onMounted(() => {
     <div style="width: 100%; height: 400px">
       <TitleWithImage title="Mars Rover Photos" pictureUrl="src/assets/mars.png" />
     </div>
-    <div
-      class="container d-flex flex-column justify-content-center align-items-center w-100 gap-2 m-4"
-    >
+    <div class="container d-flex flex-column w-100 gap-4 m-4">
+      <div class="fs-5 fs-md-3 fw-bold">List of Mars Rover photos</div>
       <div class="row g-2">
-        <div v-for="(photo, i) in data" :key="i" class="col-6 col-md-3">
+        <div
+          v-for="(photo, i) in data"
+          :key="i"
+          class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2"
+        >
           <v-card
             class="d-flex justify-content-center align-items-end text-white"
             style="height: 200px"
