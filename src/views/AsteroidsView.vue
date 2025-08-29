@@ -20,11 +20,10 @@ onMounted(() => {
 })
 
 function onDateChange() {
-  const formattedStartDate = startDate.value.toISOString().split('T')[0]
-  const formattedEndDate = endDate.value.toISOString().split('T')[0]
+  const formattedStartDate = formatDateLocal(startDate.value)
+  const formattedEndDate = formatDateLocal(endDate.value)
 
   loading.value = true
-  // send request to nasa
   DataService.getAsteroidsNeows(formattedStartDate, formattedEndDate)
     .then((d) => {
       const sorted = Object.fromEntries(
@@ -40,6 +39,13 @@ function onDateChange() {
     .finally(() => {
       loading.value = false
     })
+}
+
+function formatDateLocal(date) {
+  const year = date.getFullYear()
+  const month = String(date.getMonth() + 1).padStart(2, '0')
+  const day = String(date.getDate()).padStart(2, '0')
+  return `${year}-${month}-${day}`
 }
 </script>
 
